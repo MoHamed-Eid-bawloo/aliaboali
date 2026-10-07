@@ -30,4 +30,13 @@ npm run preview
 ## البيانات
 
 يحفظ التطبيق البيانات في قاعدة `mobile-shop-db` داخل IndexedDB الخاصة بالمتصفح. لا تستخدم البيانات `localStorage` كقاعدة بيانات.
+
+## المزامنة بين الأجهزة عبر Supabase
+
+1. أنشئ مشروعاً في Supabase.
+2. افتح SQL Editor ونفذ محتوى ملف `supabase-schema.sql`.
+3. انسخ `.env.example` إلى ملف باسم `.env` وضع رابط المشروع و`anon key` من Project Settings > API.
+4. من Authentication فعّل Email provider، ثم شغّل التطبيق وأنشئ حساباً من شاشة الدخول.
+
+بعد ذلك ترتبط البيانات بالحساب وتظهر عند تسجيل الدخول بالحساب نفسه من أي جهاز. يبقى التخزين المحلي نسخة احتياطية داخل المتصفح عند عدم ضبط Supabase.
 "# aliaboali" 
