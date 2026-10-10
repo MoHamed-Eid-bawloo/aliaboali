@@ -16,7 +16,7 @@ export const supabase = url && key ? createClient(url, key) : null;
 const dbp = openDB('mobile-shop-db', 2, { upgrade(db) { if (!db.objectStoreNames.contains('state')) db.createObjectStore('state'); } });
 
 type Data = { shopName: string; products: Product[]; sales: Invoice[]; purchases: Invoice[]; customers: Contact[]; suppliers: Contact[]; expenses: Expense[]; cash: Cash[] };
-const empty: Data = { shopName: 'متجر الهاتف', products: [], sales: [], purchases: [], customers: [], suppliers: [], expenses: [], cash: [] };
+const empty: Data = { shopName: 'علي أبو علي', products: [], sales: [], purchases: [], customers: [], suppliers: [], expenses: [], cash: [] };
 type Store = Data & {
   ready: boolean; user: User | null; cloudEnabled: boolean; error: string;
   saveProduct: (value: Product) => void; deleteProduct: (id: string) => void; saveContact: (value: Contact, supplier: boolean) => void; deleteContact: (id: string, supplier: boolean) => void; invoice: (value: Invoice, purchase: boolean) => void; deleteInvoice: (id: string, purchase: boolean) => void; expense: (value: Expense) => void; deleteExpense: (id: string) => void; cashIn: (value: Cash) => void; deleteCash: (id: string) => void; setName: (value: string) => void;
